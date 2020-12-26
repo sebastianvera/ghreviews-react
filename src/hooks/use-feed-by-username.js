@@ -24,7 +24,7 @@ function useFeedByUsername(username) {
   });
   const [reviews, setReviews] = useState([]);
   useEffect(() => {
-    if (!data || !data.feedByUsername || data.feedByUsername.newReviews.length === 0) return;
+    if (!data || data.feedByUsername.newReviews.length === 0) return;
 
     setReviews((reviews) => [...data.feedByUsername.newReviews, ...reviews].slice(0, MAX_REVIEWS));
   }, [data]);

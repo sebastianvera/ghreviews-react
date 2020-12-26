@@ -12,8 +12,8 @@ const Reviews = ({ items }) => {
   return (
     <div className="space-y-5">
       {transitions.map(
-        ({ props, key, item: { id, githubUsername, content, createdAt, githubAvatarURL } }) => (
-          <animated.div key={key} style={props}>
+        ({ props, item: { id, githubUsername, content, createdAt, githubAvatarURL } }) => (
+          <animated.div key={id} style={props}>
             <Review
               id={id}
               username={githubUsername}

@@ -22,7 +22,7 @@ function useFeed() {
   const { data, loading, error } = useSubscription(FEED_PUBLIC_SUBSCRIPTION);
   const [reviews, setReviews] = useState([]);
   useEffect(() => {
-    if (!data || !data.feed || data.feed.newReviews.length === 0) return;
+    if (!data || data.feed.newReviews.length === 0) return;
 
     setReviews((reviews) => [...data.feed.newReviews, ...reviews].slice(0, MAX_REVIEWS));
   }, [data]);
